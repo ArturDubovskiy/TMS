@@ -27,7 +27,7 @@ const PORT = process.env.PORT || 5000;
 
 async function start() {
     try {
-        await mongoose.connect(config.get('mongoUri'));
+        await mongoose.connect( process.env.MONGODB_URI || config.get('mongoUri'));
         app.listen(PORT, () => console.log(`App started at port ${PORT}`));
     } catch (e) {
         console.log('Server error', e);
