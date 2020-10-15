@@ -1,0 +1,30 @@
+.undone-task {
+    background: teal;
+    margin: 2% 0;
+    border-radius: 5px;
+    min-height: 40px;
+    color: white;
+}
+
+.done-task {
+    background: lightgray;
+    margin: 2% 0;
+    border-radius: 5px;
+    min-height: 40px;
+    color: dimgray;
+}
+
+#detail-modal-header, #edit-modal-header {
+    background:teal;
+    color: white;
+}
+
+.list-item {
+    min-height: 40px;
+    font-size: 1.5rem;
+    padding: 2%;
+}
+
+.detail-modal-content {
+    word-wrap: break-word;
+}
