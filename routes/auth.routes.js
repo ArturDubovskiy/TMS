@@ -76,7 +76,7 @@ router.post(
                 from: config.get('mailCredentials').user,
                 to: user.email,
                 subject: 'Account Verification',
-                text: 'Hello,\n\n' + 'Please verify your account by clicking the link: \nhttp:\/\/'
+                text: 'Hello,\n\n' + 'Please verify your account by clicking the link: \n\/\/'
                     + req.headers.origin + '\/confirmation\/' + token.token + '.\n'
             }
             transporter.sendMail(mailOptions, (err) => {
@@ -209,7 +209,7 @@ router.post(
                 from: 'no.replay.tms.app@gmail.com',
                 to: user.email,
                 subject: 'Account Verification',
-                text: 'Hello,\n\n' + 'Please verify your account by clicking the link: \nhttp:\/\/'
+                text: 'Hello,\n\n' + 'Please verify your account by clicking the link: \n\/\/'
                     + req.headers.origin + '\/confirmation\/' + token.token + '.\n'
             }
             transporter.sendMail(mailOptions, (err) => {

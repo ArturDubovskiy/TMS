@@ -7,15 +7,18 @@
     "node": "12.x",
     "npm": "6.x"
   },
+  "proxy": "http://localhost:5000/",
   "scripts": {
     "start": "node app.js",
     "server": "nodemon app.js",
     "client": "npm run start --prefix client",
     "client:install": "npm install --prefix client",
     "client:build": "npm run build --prefix client",
+    "install:nodes": "npm install && cd client && npm install",
     "build": "npm run client:install && npm run client:build && npm start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "heroku-postbuild": "cd client && npm install && npm run build",
+    "up": "npm run install:nodes && npm run dev"
   },
   "keywords": [
     "TSM",
