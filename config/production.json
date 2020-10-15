@@ -1,6 +1,6 @@
 {
     "port": 5000,
-    "mongoUri": "mongodb://127.0.0.1:27017/tms",
+    "mongoUri": "mongodb+srv://Artur:799109Ip@cluster0.q8mro.mongodb.net/tms?retryWrites=true&w=majority",
     "jwtSecret": "London is the capital of GB",
     "baseUrl": "",
     "mailCredentials": {
