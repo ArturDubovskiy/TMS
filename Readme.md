@@ -67,5 +67,9 @@ Runs both the client app and the server app in development mode.
 Open http://localhost:3000 to view the client in the browser.
 
 
+## TODO
+
+* Unit and integration tests
+* Responsive styles (now may be issues on small screens)
 
 
