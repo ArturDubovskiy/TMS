@@ -119,7 +119,7 @@ export const AuthPage = () => {
                 </Form>
                 {error && <Message
                     error
-                    header='Action Forbidden'
+                    header='Error occurred'
                     content={error}
                 />}
                 <Message>

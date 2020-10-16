@@ -135,7 +135,7 @@ export const CreateTaskForm = props => {
             </Form>
             {error && <Message
                 error
-                header='Action Forbidden'
+                header='Error occurred'
                 content={error}
             />}
             <div className='modal-btn'>

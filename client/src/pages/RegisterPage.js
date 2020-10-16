@@ -158,7 +158,7 @@ export const RegisterPage = () => {
                 </Form>
                 {error && <Message
                     error
-                    header='Action Forbidden'
+                    header='Error occurred'
                     content={error}
                 />}
                 <Message>

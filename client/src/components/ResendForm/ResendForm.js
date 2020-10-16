@@ -39,7 +39,7 @@ export const ResendForm = ({ handleResendToken }) => {
                 <Segment color='teal' stacked>
                     <Header as='h4' color='teal' textAlign='center'>
                         Not valid or expired token
-                        </Header>
+                    </Header>
                     <Form onSubmit={handleSubmitForm}>
                         <Form.Field>
                             <Form.Input
