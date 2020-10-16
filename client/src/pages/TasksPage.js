@@ -150,7 +150,7 @@ export const TasksPage = () => {
                 onOpen={() => setOpenCreate(true)}>
                 <Modal.Header id='create-modal-header'>Create task</Modal.Header>
                 <Modal.Content>
-                    <CreateTaskForm form type='create' handleClose={handleClose} handleUpdate={fetchTasks}></CreateTaskForm>
+                    <CreateTaskForm type='create' handleClose={handleClose} handleUpdate={fetchTasks}></CreateTaskForm>
                 </Modal.Content>
             </Modal>
         </Grid>

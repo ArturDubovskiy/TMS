@@ -15,12 +15,15 @@ export const CreateTaskForm = props => {
         title: '',
         description: '',
         priority: 1,
-        dueDate: ''
+        dueDate: new Date()
     });
 
     useEffect(() => {
-        setForm(props.form);
+        if (props.form) {
+            setForm(props.form);
+        }
     }, [props]);
+
 
     const priorityOptions = [
         {
@@ -59,7 +62,7 @@ export const CreateTaskForm = props => {
             if (data) {
                 props.handleUpdate();
                 props.handleClose();
-            }
+            };
         } else {
             const data = await request(`/api/tasks/${props.id}`, 'PATCH', { ...form }, {
                 Authorization: `Bearer ${auth.token}`
@@ -67,21 +70,21 @@ export const CreateTaskForm = props => {
             if (data) {
                 props.handleUpdate();
                 props.handleClose();
-            }
-        }
-    }
+            };
+        };
+    };
 
     const dateHandler = () => {
         let date = new Date();
         date.setDate(date.getDate() - 1);
         return date;
-    }
+    };
 
     const changeHandler = (event, node) => {
         if (node) {
-            setForm({ ...form, [node.name]: node.value })
+            setForm({ ...form, [node.name]: node.value });
         } else {
-            setForm({ ...form, [event.target.name]: event.target.value })
+            setForm({ ...form, [event.target.name]: event.target.value });
         };
     };
 
@@ -93,44 +96,42 @@ export const CreateTaskForm = props => {
                         required
                         name='title'
                         label='Title'
-                        defaultValue={props.form.title}
+                        defaultValue={form.title}
                         placeholder='Title'
                         maxLength='300'
                         onChange={changeHandler}>
-
                     </Form.Input>
                     <Form.TextArea
                         required
                         name='description'
                         label='Description'
-                        defaultValue={props.form.description}
+                        defaultValue={form.description}
                         placeholder='Description'
                         maxLength='3000'
                         onChange={changeHandler}>
-
                     </Form.TextArea>
                     <Form.Dropdown
                         required
                         name='priority'
                         placeholder='Priority'
                         label='Priority'
-                        defaultValue={props.form.priority}
+                        defaultValue={form.priority}
                         selection
                         options={priorityOptions}
                         onChange={(e, el) => changeHandler(e, el)}>
-
                     </Form.Dropdown>
-                    <Form.Input label='DueDate' required>
-                        <div className='datepicker'>
-                            <SemanticDatepicker
-                                minDate={dateHandler()}
-                                value={props.form.dueDate}
-                                showToday={false}
-                                name='dueDate'
-                                autoComplete='off'
-                                onChange={(e, el) => changeHandler(e, el)} />
-                        </div>
-                    </Form.Input>
+                    <div className='datepicker'>
+                        <SemanticDatepicker
+                            datePickerOnly
+                            label='DueDate'
+                            required
+                            minDate={dateHandler()}
+                            value={form.dueDate}
+                            showToday={false}
+                            name='dueDate'
+                            autoComplete='off'
+                            onChange={(e, el) => changeHandler(e, el)} />
+                    </div>
                 </Segment>
             </Form>
             {error && <Message
