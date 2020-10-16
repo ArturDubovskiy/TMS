@@ -71,5 +71,5 @@ Open http://localhost:3000 to view the client in the browser.
 
 * Unit and integration tests
 * Responsive styles (now may be issues on small screens)
-
+* Extract business logic from routes to controllers
 
